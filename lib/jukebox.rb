@@ -37,14 +37,14 @@ def exit_jukebox
 end
 
 def run(songs)
-  puts "Please enter a command:" # prompt user for input
-  input = gets.strip # store input as input
-  until input == 'exit' do # until user input is exit do
-    help if input == 'help' # call help if input is help
-    list(songs) if input == 'list' # call list if input is list
-    play(songs) if input == 'play' # call play is input is play
-    puts "Please enter a command:" # prompt user for next command
-    input = gets.strip # store command as var input
+  puts "Please enter a command:" 
+  input = gets.strip 
+  until input == 'exit' do 
+    help if input == 'help' 
+    list(songs) if input == 'list' 
+    play(songs) if input == 'play' 
+    puts "Please enter a command:" 
+    input = gets.strip 
   end
-  exit_jukebox # once command is exit, call exit_jukebox 
+  exit_jukebox 
 end
