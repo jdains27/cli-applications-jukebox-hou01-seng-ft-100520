@@ -14,24 +14,22 @@ def list(songs)
 end
 
 def play(songs)
-  puts "Please enter a song name or number:" # prompt user for input
-  song = gets.strip # store user input as string var song
-  if song.match? /\A\d+\z/ # if string contains integer
-    song = song.to_i # convert string to integer
+  puts "Please enter a song name or number:" 
+  song = gets.strip 
+  if song.match? /\A\d+\z/ 
+    song = song.to_i 
   end
-  numbered = (1..songs.length).zip(songs) # create new numbered array ex [[1, song_name], [2,song_name]...]
-  phrase = nil # create var phrase to hold phrase to be puts out
-  numbered.each do |num_song| # iterate through numbered AoA and assign each element
-                              # to num_song
-    if num_song.include?(song) # if song is in num_song
-        phrase = "Playing #{num_song[1]}" # interpolate num_song[1]
-        break # break out of numbered.each loop
+  numbered = (1..songs.length).zip(songs) 
+  phrase = nil 
+  numbered.each do |num_song| 
+    if num_song.include?(song) 
+        phrase = "Playing #{num_song[1]}" 
+        break 
     else
       phrase = "Invalid input, please try again"
     end
   end
-  #binding.pry
-  puts phrase #puts out phrase
+  puts phrase 
 end
 
 def exit_jukebox
